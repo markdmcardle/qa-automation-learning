@@ -51,4 +51,39 @@ public class CalculatorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Cannot divide by zero");
     }
+    @Test
+    void shouldAddNegativeNumbers() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.add(-3, -7);
+
+        assertThat(result).isEqualTo(-10);
+    }
+
+    @Test
+    void shouldSubtractResultingInNegativeNumber() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.subtract(4, 10);
+
+        assertThat(result).isEqualTo(-6);
+    }
+
+    @Test
+    void shouldMultiplyByZero() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.multiply(5, 0);
+
+        assertThat(result).isEqualTo(0);
+    }
+
+    @Test
+    void shouldDivideUnevenNumbers() {
+        Calculator calculator = new Calculator();
+
+        double result = calculator.divide(10, 4);
+
+        assertThat(result).isEqualTo(2.5);
+    }
 }

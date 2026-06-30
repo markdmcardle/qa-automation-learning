@@ -11,8 +11,7 @@
     <description>Mark's QA automation learning project</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <dependencies>
