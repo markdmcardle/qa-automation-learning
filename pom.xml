@@ -7,6 +7,8 @@
     <groupId>com.mark</groupId>
     <artifactId>qa-automation-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>QA Automation Learning</name>
+    <description>Mark's QA automation learning project</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,6 +20,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.25.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
