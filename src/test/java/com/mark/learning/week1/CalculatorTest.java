@@ -1,5 +1,6 @@
-package com.mark;
+package com.mark.learning.week1;
 
+import com.mark.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
