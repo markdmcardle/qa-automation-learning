@@ -1,5 +1,6 @@
 package com.mark;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,10 +8,15 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CalculatorTest {
 
+    private Calculator calculator;
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+    }
+
     @Test
     void shouldAddTwoNumbers() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.add(2, 3);
 
         assertThat(result).isEqualTo(5);
@@ -18,8 +24,6 @@ public class CalculatorTest {
 
     @Test
     void shouldSubtractTwoNumbers() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.subtract(10, 4);
 
         assertThat(result).isEqualTo(6);
@@ -27,8 +31,6 @@ public class CalculatorTest {
 
     @Test
     void shouldMultiplyTwoNumbers() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.multiply(3, 4);
 
         assertThat(result).isEqualTo(12);
@@ -36,8 +38,6 @@ public class CalculatorTest {
 
     @Test
     void shouldDivideTwoNumbers() {
-        Calculator calculator = new Calculator();
-
         double result = calculator.divide(10, 2);
 
         assertThat(result).isEqualTo(5.0);
@@ -45,16 +45,12 @@ public class CalculatorTest {
 
     @Test
     void shouldThrowErrorWhenDividingByZero() {
-        Calculator calculator = new Calculator();
-
         assertThatThrownBy(() -> calculator.divide(10, 0))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Cannot divide by zero");
     }
     @Test
     void shouldAddNegativeNumbers() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.add(-3, -7);
 
         assertThat(result).isEqualTo(-10);
@@ -62,8 +58,6 @@ public class CalculatorTest {
 
     @Test
     void shouldSubtractResultingInNegativeNumber() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.subtract(4, 10);
 
         assertThat(result).isEqualTo(-6);
@@ -71,8 +65,6 @@ public class CalculatorTest {
 
     @Test
     void shouldMultiplyByZero() {
-        Calculator calculator = new Calculator();
-
         int result = calculator.multiply(5, 0);
 
         assertThat(result).isEqualTo(0);
@@ -80,8 +72,6 @@ public class CalculatorTest {
 
     @Test
     void shouldDivideUnevenNumbers() {
-        Calculator calculator = new Calculator();
-
         double result = calculator.divide(10, 4);
 
         assertThat(result).isEqualTo(2.5);
